@@ -2,7 +2,8 @@ import { AxiosResponse } from 'axios';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import NetworkImage from '../../common/NetworkImages/NetworkImage';
+import Navbar from '../../common/Navbar';
+import NetworkImage from '../../common/NetworkImages';
 import { stateType } from '../../redux';
 import *  as actions from  '../../redux/posts/PostActionCreators'
 function FeedPage() {
@@ -22,7 +23,9 @@ function FeedPage() {
   }
 
   return <div>
-      {state.postList.map((item:any) => <NetworkImage key={item.id} url={item.urls.small}/>) }
+
+      <Navbar />
+      {/* {state.postList.map((item:any) => <NetworkImage key={item.id} url={item.urls.small}/>) } */}
   </div>
 }
 

@@ -1,0 +1,11 @@
+:root {
+  --primaryGreen: #00d09b;
+  --secondaryGreen: #e5f9f5;
+  --primaryGray: #44475a;
+  --primaryBlue: #5366ff;
+}
+
+.App {
+  margin: 0;
+  padding: 0;
+}
