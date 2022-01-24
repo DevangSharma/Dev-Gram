@@ -1,18 +1,28 @@
-import { FETCH_POSTS } from "./PostActionTypes"
+import { FETCH_POSTS, SET_POSTS } from "./PostActionTypes"
 
 const initState = {
-    nums: 10,
+    isLoading: false,
+    postList: [],
 }
 
 type actionType = {
     type:string
+    payload: []
 }
 export const postReducer = (state = initState, action:actionType) => {
 
     switch(action.type) {
         case FETCH_POSTS :
             return  {
-                nums: state.nums - 1,
+                ...state,
+                isLoading: true,
+            }
+
+        case SET_POSTS :
+            return  {
+             
+                isLoading: false,
+                postList: action.payload
             }
 
         default :
