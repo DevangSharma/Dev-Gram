@@ -13,7 +13,6 @@ export const fetchPosts = () => {
 
         axios.get(BASE_URL + "/photos" + CLIENT_ID).then(
             (res) => {
-                console.log(res.data);
                 dispatch(setPosts(res.data));
             }
         )
@@ -21,6 +20,7 @@ export const fetchPosts = () => {
 }
 
 export const setPosts = (data: {}) => {
+    
     return (dispatch:ThunkDispatch<{}, void, AnyAction>) => {
         dispatch({
             type: SET_POSTS,

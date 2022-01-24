@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import './App.css';
-import HomePage from './Views/HomePage/HomePage';
+import HomePage from './Views/HomePage';
 import {store} from './redux/store'
 
 function App() {

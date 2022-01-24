@@ -20,7 +20,6 @@ export const postReducer = (state = initState, action:actionType) => {
 
         case SET_POSTS :
             return  {
-             
                 isLoading: false,
                 postList: action.payload
             }
