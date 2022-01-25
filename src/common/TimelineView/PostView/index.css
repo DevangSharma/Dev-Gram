@@ -9,4 +9,5 @@
   box-shadow: 0px 4px 1em var(--primaryGray);
   border-radius: 8px;
   box-sizing: border-box;
+  overflow: hidden;
 }
