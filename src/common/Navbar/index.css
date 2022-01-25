@@ -1,38 +1,31 @@
-.nav219NavbarContainer {
-  background-color: var(--secondaryGreen);
+.nvc219NavbarContainer {
+  background-color: var(--primaryWhite);
+  padding: 8px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  box-shadow: 0 0 0.5em var(--primaryGray);
+}
+
+.nvi219NavbarItems {
+  display: flex;
   align-items: center;
-  color: var(--primaryGray);
-  padding: 4px 8px;
-  box-shadow: 0px 1px 10px var(--primaryGray);
+
+  justify-content: space-between;
+  width: 100vw;
+  max-width: 600px;
+}
+
+.img219LogoImage {
+  height: 36px;
+  width: 36px;
+  object-fit: contain;
 }
 
 .nav219NavbarHeading {
   font-size: 2em;
-  padding: 0;
-  margin: 0;
+  color: var(--primaryGray);
 }
 
-.img219LogoImage {
-  padding: 0;
-  margin: 0;
-  height: 2em;
-  object-fit: fill;
-}
-
-.nav219NavbarDiv {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
-}
-
-.nav219NavbarItem {
-  padding: 8px;
-  margin: 0;
-}
-
-.fap219UserProfile {
+.upi219UserProfileIcon {
   color: var(--primaryGray);
 }
