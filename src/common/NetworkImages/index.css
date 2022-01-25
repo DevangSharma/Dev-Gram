@@ -1,11 +1,12 @@
 .nii219NetworkImage {
   object-fit: cover;
-  height: 90%;
+  height: 100%;
   width: 100%;
+  aspect-ratio: 1;
 }
 
 .nid219NetworkDiv {
-  display: inline;
+  display: inline-block;
   height: 100%;
   width: 100%;
 }

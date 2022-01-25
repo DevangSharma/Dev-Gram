@@ -1,9 +1,7 @@
 .pvc219PostViewContainer {
-  height: 100vw;
   width: 100vw;
   padding: 8px;
   max-width: 600px;
-  max-height: 600px;
   background-color: var(--primaryWhite);
   margin-bottom: 12px;
   box-shadow: 0px 4px 1em var(--primaryGray);
