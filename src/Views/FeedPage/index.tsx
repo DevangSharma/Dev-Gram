@@ -1,5 +1,5 @@
 import Navbar from "../../common/Navbar";
-import TimelineView from "../../common/TimelineView";
+import TimelineView from "./TimelineView";
 
 function FeedPage() {
   return (
