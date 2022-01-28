@@ -1,7 +1,7 @@
 import { FETCH_POSTS, SET_POSTS } from "./PostActionTypes"
 
 const initState = {
-    isLoading: false,
+    isLoading: true,
     postList: [],
 }
 

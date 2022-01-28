@@ -9,13 +9,13 @@ import { FETCH_USER, SET_USER } from "./userActionTypes";
 export const getUserData = (username : string) => {
     return async (dispatch: ThunkDispatch<{},void,AnyAction>) => {
         dispatch({
-            type: SET_USER,
+            type: FETCH_USER,
         });
 
         axios.get(BASE_URL + 'users/' + username + CLIENT_ID).then(
-            ((res) => {
-                dispatch(setUser(res));
-            })
+            (res) => {
+                dispatch(setUser(res.data));
+            }
         )
     }
 }
@@ -23,7 +23,7 @@ export const getUserData = (username : string) => {
 export const setUser = (userData: any) => {
     return async (dispatch: ThunkDispatch<{},void,AnyAction>) => {
         dispatch({
-            type: FETCH_USER,
+            type: SET_USER,
             payload: userData,
         });
     }

@@ -1,0 +1,50 @@
+.pph219ProfilePageHeader {
+  display: inline-grid;
+  margin-top: 24px;
+  grid-template-columns: 1fr 2fr;
+  width: 100%;
+  color: var(--primaryGray);
+  border-radius: 8px;
+  background-color: var(--primaryWhite);
+  padding: 12px 0;
+}
+
+.ppi219ProfilePageImage img {
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 2px;
+  margin-right: 12px;
+  width: 100%;
+  border: 2px solid var(--primaryGreen);
+  box-sizing: border-box;
+}
+
+.plh219ProfilePageLeftHeader {
+  place-self: center;
+}
+
+.plh219ProfilePageRightHeader {
+  place-self: center;
+}
+
+.phf219ProfileHeaderFollowers {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+}
+
+.phf219ProfileHeaderFollowers p {
+  margin-right: 12px;
+}
+
+.phb219ProfileHeaderBio {
+  margin-bottom: 12px;
+}
+
+.phb219ProfileHeaderBio p {
+  margin: 8px 0;
+}
+
+.fal219FontAwesomeLocation {
+  margin-right: 8px;
+}

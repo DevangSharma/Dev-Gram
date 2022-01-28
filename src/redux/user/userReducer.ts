@@ -3,7 +3,7 @@ import { FETCH_USER, SET_USER } from "./userActionTypes";
 
 
 const initialState = {
-    isLoading : false,
+    isLoading : true,
     userData: {}
 }
 
@@ -21,9 +21,9 @@ export const userReducer = (state = initialState, action:userActionType) => {
                 isLoading:true,
             }
 
-        case SET_USER:
+        case SET_USER:            
             return {
-                isLoadin:false,
+                isLoading:false,
                 userData: action.payload,
             }
     

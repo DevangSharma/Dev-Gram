@@ -1,0 +1,8 @@
+.ppc219ProfilePageContainer {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 600px;
+}
