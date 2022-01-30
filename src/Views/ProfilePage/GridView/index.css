@@ -1,0 +1,9 @@
+.gvc219GridViewContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 8px;
+  background-color: var(--primaryWhite);
+  border-radius: 8px;
+}

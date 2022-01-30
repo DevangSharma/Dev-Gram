@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import Navbar from "../../common/Navbar";
@@ -7,13 +7,19 @@ import * as actions from "../../redux/actionCreators";
 import { stateType } from "../../redux";
 import ProfilePageHeader from "./ProfilePageHeader";
 import "./index.css";
+import GridView from "./GridView";
 
 function ProfilePage() {
   const dispatch = useDispatch();
-  const { getUserData } = bindActionCreators(actions, dispatch);
-  const state = useSelector((state: stateType) => state.userData);
+  const { getUserData, getUserImages } = bindActionCreators(actions, dispatch);
+  const state = useSelector((state: stateType): any => state.userData);
+
   useEffect(() => {
-    getUserData("nublson");
+    getUserData("clesulie");
+  }, []);
+
+  useEffect(() => {
+    getUserImages("clesulie");
   }, []);
 
   if (state.isLoading) {
@@ -25,7 +31,11 @@ function ProfilePage() {
       <div className="ppc219ProfilePageContainer">
         <ProfilePageHeader userData={state.userData} />
 
-        <TimelineView />
+        {state.isImageLoading ? (
+          <h2>Data is loading</h2>
+        ) : (
+          <GridView imageList={state.userImages} />
+        )}
       </div>
     </div>
   );

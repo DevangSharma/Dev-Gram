@@ -1,15 +1,17 @@
 import { Action } from "redux";
-import { FETCH_USER, SET_USER } from "./userActionTypes";
+import { FETCH_USER, FETCH_USER_IMAGES, SET_USER, SET_USER_IMAGES } from "./userActionTypes";
 
 
 const initialState = {
     isLoading : true,
-    userData: {}
+    isLoadingImages : true,
+    userData: {},
+    userImages: []
 }
 
 type userActionType = {
     type:string,
-    payload: {}
+    payload: any
 }
 
 export const userReducer = (state = initialState, action:userActionType) => {
@@ -23,9 +25,24 @@ export const userReducer = (state = initialState, action:userActionType) => {
 
         case SET_USER:            
             return {
+                ...state,
                 isLoading:false,
                 userData: action.payload,
             }
+
+        case FETCH_USER_IMAGES:
+            return {
+                ...state,
+                isLoadingImages:true,
+            }
+
+        case SET_USER_IMAGES:            
+            return {
+                ...state,
+                isLoadingImages:false,
+                userImages: action.payload,
+            }
+        
     
         default:
             return state;
