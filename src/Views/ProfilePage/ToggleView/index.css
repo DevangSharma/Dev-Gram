@@ -1,0 +1,27 @@
+.tvc219ToggleViewContainer {
+  margin-top: 8px;
+  padding: 8px;
+  background-color: var(--primaryWhite);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.tvb219ToggleViewButton {
+  font-size: 16px;
+  padding: 8px;
+  margin: 0 8px;
+  display: flex;
+  background-color: var(--primaryWhite);
+  border: none;
+  color: var(--primaryGray);
+}
+
+.tvb219ToggleViewButton p {
+  margin-left: 8px;
+}
+
+.selected {
+  border-bottom: 2px solid var(--primaryGreen);
+  color: var(--primaryGreen);
+}

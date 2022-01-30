@@ -8,17 +8,16 @@ import { stateType } from "../../redux";
 import ProfilePageHeader from "./ProfilePageHeader";
 import "./index.css";
 import GridView from "./GridView";
+import ToggleViews from "./ToggleView";
 
 function ProfilePage() {
   const dispatch = useDispatch();
   const { getUserData, getUserImages } = bindActionCreators(actions, dispatch);
   const state = useSelector((state: stateType): any => state.userData);
+  const [isGridView, setGridView] = useState(true);
 
   useEffect(() => {
     getUserData("clesulie");
-  }, []);
-
-  useEffect(() => {
     getUserImages("clesulie");
   }, []);
 
@@ -30,11 +29,18 @@ function ProfilePage() {
       <Navbar />
       <div className="ppc219ProfilePageContainer">
         <ProfilePageHeader userData={state.userData} />
+        <ToggleViews isGridView={isGridView} setGridView={setGridView} />
 
         {state.isImageLoading ? (
           <h2>Data is loading</h2>
         ) : (
-          <GridView imageList={state.userImages} />
+          <div>
+            {isGridView ? (
+              <GridView imageList={state.userImages} />
+            ) : (
+              <TimelineView imageList={state.userImages} />
+            )}
+          </div>
         )}
       </div>
     </div>
