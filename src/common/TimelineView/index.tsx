@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import NetworkImage from "../../../common/NetworkImages";
 import "./index.css";
-function GridView({ fetchHandler }: any) {
+import PostView from "./PostView";
+
+function TimelineView({ fetchHandler }: any) {
   const { pageNumber, fetchPosts, isLoading, postList, lastPostReached } =
     fetchHandler();
 
@@ -10,20 +11,20 @@ function GridView({ fetchHandler }: any) {
   }, [pageNumber]);
 
   return (
-    <div className="gvc219GridViewContainer">
+    <div className="tlc219TimelineContainer">
       <div>{isLoading && <h2>Data is Loading</h2>}</div>
       {postList.map((item: any, index: number) => {
         if (index === postList.length - 5) {
           return (
             <div ref={lastPostReached} key={item.id}>
-              <NetworkImage key={item.id} url={item.urls.regular} />;
+              <PostView key={item.id} postData={item} />
             </div>
           );
         }
 
         return (
           <div key={item.id}>
-            <NetworkImage key={item.id} url={item.urls.regular} />;
+            <PostView postData={item} />
           </div>
         );
       })}
@@ -31,4 +32,4 @@ function GridView({ fetchHandler }: any) {
   );
 }
 
-export default GridView;
+export default TimelineView;

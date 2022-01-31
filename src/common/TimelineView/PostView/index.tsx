@@ -1,5 +1,5 @@
 import React from "react";
-import NetworkImage from "../../../../common/NetworkImages";
+import NetworkImage from "../../NetworkImages";
 import PostFooter from "./PostFooter";
 import PostHeader from "./PostHeader";
 import "./index.css";

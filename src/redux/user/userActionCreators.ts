@@ -3,7 +3,7 @@ import { AnyAction } from "redux"
 import { ThunkDispatch } from "redux-thunk"
 import { BASE_URL, CLIENT_ID } from "../../constants/API";
 import { FETCH_POSTS } from "../posts/PostActionTypes";
-import { FETCH_USER, FETCH_USER_IMAGES, SET_USER, SET_USER_IMAGES } from "./userActionTypes";
+import { CLEAR_USER, FETCH_USER, FETCH_USER_IMAGES, SET_USER, SET_USER_IMAGES } from "./userActionTypes";
 
 
 export const getUserData = (username : string) => {
@@ -45,7 +45,7 @@ export const setUserImages = (userImages: any) => {
     }
 }
 
-export const getUserImages = (username : string) => {
+export const getUserImages = (username : string, pageNumber: number) => {
 
     return async (dispatch: ThunkDispatch<{},void,AnyAction>) => {
         
@@ -59,7 +59,8 @@ export const getUserImages = (username : string) => {
             url: BASE_URL + 'users/' + username + '/photos',
             params: {
                 client_id: CLIENT_ID,
-                per_page:10
+                per_page:10,
+                page: pageNumber
             }
         }).then(
             (res) => {                
@@ -69,5 +70,13 @@ export const getUserImages = (username : string) => {
             (err) => console.log(err)
             
         )
+    }
+}
+
+export const clearUser = () => {
+    return async (dispatch: ThunkDispatch<{},void,AnyAction>) => {
+        dispatch({
+            type: CLEAR_USER,
+        });
     }
 }

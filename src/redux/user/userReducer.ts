@@ -1,8 +1,14 @@
+import { type } from "os";
 import { Action } from "redux";
-import { FETCH_USER, FETCH_USER_IMAGES, SET_USER, SET_USER_IMAGES } from "./userActionTypes";
+import { CLEAR_USER, FETCH_USER, FETCH_USER_IMAGES, SET_USER, SET_USER_IMAGES } from "./userActionTypes";
 
-
-const initialState = {
+type stateType = {
+    isLoading : boolean,
+    isLoadingImages : boolean,
+    userData: {},
+    userImages: {}[]
+}
+const initialState : stateType = {
     isLoading : true,
     isLoadingImages : true,
     userData: {},
@@ -40,9 +46,11 @@ export const userReducer = (state = initialState, action:userActionType) => {
             return {
                 ...state,
                 isLoadingImages:false,
-                userImages: action.payload,
+                userImages: [...state.userImages,...action.payload],
             }
         
+        case CLEAR_USER:
+            return initialState;
     
         default:
             return state;
