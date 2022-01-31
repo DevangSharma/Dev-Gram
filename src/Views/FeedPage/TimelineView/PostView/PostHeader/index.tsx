@@ -2,11 +2,17 @@ import React from "react";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import "./index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
 
 function PostHeader({ userData }: any) {
+  const navigate = useNavigate();
+
+  const onUserClicked = () => {
+    navigate(`/user/${userData.username}`);
+  };
   return (
     <div className="pvh219PostViewHeader">
-      <div className="pug219PostViewUserGroup">
+      <div className="pug219PostViewUserGroup" onClick={onUserClicked}>
         <img
           className="pvi219PostViewProfileImage"
           src={userData.profile_image.small}

@@ -9,6 +9,7 @@ import ProfilePageHeader from "./ProfilePageHeader";
 import "./index.css";
 import GridView from "./GridView";
 import ToggleViews from "./ToggleView";
+import { useParams } from "react-router-dom";
 
 function ProfilePage() {
   const dispatch = useDispatch();
@@ -16,9 +17,11 @@ function ProfilePage() {
   const state = useSelector((state: stateType): any => state.userData);
   const [isGridView, setGridView] = useState(true);
 
+  const { username } = useParams();
+
   useEffect(() => {
-    getUserData("clesulie");
-    getUserImages("clesulie");
+    getUserData(username!);
+    getUserImages(username!);
   }, []);
 
   if (state.isLoading) {
