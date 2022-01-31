@@ -1,6 +1,10 @@
 import { FETCH_POSTS, SET_POSTS } from "./PostActionTypes"
 
-const initState = {
+type stateType = {
+    isLoading:boolean,
+    postList: {}[],
+}
+const initState : stateType = {
     isLoading: true,
     postList: [],
 }
@@ -20,8 +24,9 @@ export const postReducer = (state = initState, action:actionType) => {
 
         case SET_POSTS :
             return  {
+                ...state,
                 isLoading: false,
-                postList: action.payload
+                postList: [...state.postList,...action.payload]
             }
 
         default :

@@ -5,13 +5,22 @@ import {ThunkDispatch} from 'redux-thunk';
 import { BASE_URL, CLIENT_ID } from "../../constants/API";
 
 
-export const fetchPosts = () => {
+export const fetchPosts = (pageNumber : number) => {
     return async (dispatch:ThunkDispatch<{}, void, AnyAction>) => {
         dispatch({
             type: FETCH_POSTS
         });
 
-        axios.get(BASE_URL + "/photos" + CLIENT_ID).then(
+        axios({
+            method:'GET',
+            url: BASE_URL + 'photos',
+            params: {
+                client_id: CLIENT_ID,
+                per_page:10,
+                page: pageNumber
+            }
+        }
+            ).then(
             (res) => {
                 dispatch(setPosts(res.data));
             }

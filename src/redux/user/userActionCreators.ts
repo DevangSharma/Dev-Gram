@@ -12,7 +12,13 @@ export const getUserData = (username : string) => {
             type: FETCH_USER,
         });
 
-        axios.get(BASE_URL + 'users/' + username + CLIENT_ID).then(
+        axios({
+            method:'GET',
+            url: BASE_URL + 'users/' + username,
+            params: {
+                client_id: CLIENT_ID,
+            }
+        }).then(
             (res) => {
                 dispatch(setUser(res.data));
             }
@@ -48,7 +54,14 @@ export const getUserImages = (username : string) => {
         });
        
         
-        axios.get( BASE_URL + 'users/' + username + '/photos' + CLIENT_ID ).then(
+        axios({
+            method:'GET',
+            url: BASE_URL + 'users/' + username + '/photos',
+            params: {
+                client_id: CLIENT_ID,
+                per_page:10
+            }
+        }).then(
             (res) => {                
                 dispatch(setUserImages(res.data));
             }

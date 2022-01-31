@@ -13,8 +13,6 @@ function HomePage() {
         <Route path="/user/:username" element={<ProfilePage />} />
         <Route index element={<FeedPage />} />
       </Routes>
-      {/* <FeedPage /> */}
-      {/* <ProfilePage /> */}
     </div>
   );
 }
