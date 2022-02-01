@@ -34,3 +34,16 @@
 .upi219UserProfileIcon {
   color: var(--primaryGray);
 }
+
+.upt219UserProfileTheme {
+  align-self: center;
+  color: var(--primaryGray);
+  font-size: 24px;
+  padding-right: 8px;
+}
+
+.upi219UserProfileIconGroup {
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+}

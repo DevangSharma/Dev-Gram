@@ -1,6 +1,6 @@
 import { DARK, LIGHT } from "./themeActionTypes"
 
- export const toggleTheme = (currentTheme:string) => {
+ export const toggleTheme = (currentTheme:string) => {    
      
     if(currentTheme == LIGHT)
     {

@@ -16,11 +16,14 @@ function ProfilePage() {
   const dispatch = useDispatch();
   const { getUserData, clearUser } = bindActionCreators(actions, dispatch);
   const state = useSelector((state: stateType): any => state.userData);
+  const theme = useSelector((state: stateType): any => state.theme);
   const [isGridView, setGridView] = useState(true);
 
   const { username } = useParams();
 
   const postsData = useFetchUserImages();
+
+  console.log(theme);
 
   useEffect(() => {
     getUserData(username!);
