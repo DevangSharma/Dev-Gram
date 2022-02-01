@@ -23,8 +23,6 @@ function ProfilePage() {
 
   const postsData = useFetchUserImages();
 
-  console.log(theme);
-
   useEffect(() => {
     getUserData(username!);
   }, []);

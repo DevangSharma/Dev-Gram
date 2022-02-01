@@ -2,15 +2,16 @@ import React from "react";
 import "font-awesome/css/font-awesome.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
-import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faSun, faMoon, faRedoAlt } from "@fortawesome/free-solid-svg-icons";
 import GrowwLogo from "../../assets/images/GrowwLogo.png";
 
 import "./index.css";
 import { useNavigate } from "react-router-dom";
 import useTheme from "../../utils/getTheme";
 import { LIGHT } from "../../redux/theme/themeActionTypes";
-import { toggleTheme } from "../../redux/actionCreators";
+import { fetchPosts, toggleTheme } from "../../redux/actionCreators";
 import { useDispatch } from "react-redux";
+import { clearCachedPosts } from "../../utils/apiHelper";
 function Navbar() {
   const navigate = useNavigate();
 
@@ -20,6 +21,11 @@ function Navbar() {
 
   const onLogoClicked = () => {
     navigate("/");
+  };
+
+  const hardReload = () => {
+    clearCachedPosts();
+    window.location.reload();
   };
 
   return (
@@ -34,25 +40,23 @@ function Navbar() {
           Growwgram
         </h3>
 
-        <div
-          className="upi219UserProfileIconGroup"
-          onClick={() => {
-            dispatch(toggleTheme(theme));
-          }}
-        >
-          {theme === LIGHT ? (
-            <FontAwesomeIcon
-              className="upt219UserProfileTheme"
-              icon={faSun}
-              size="2x"
-            />
-          ) : (
-            <FontAwesomeIcon
-              className="upt219UserProfileTheme"
-              icon={faMoon}
-              size="2x"
-            />
-          )}
+        <div className="upi219UserProfileIconGroup">
+          <div className="upt219UserProfileReload" onClick={hardReload}>
+            <FontAwesomeIcon icon={faRedoAlt} />
+          </div>
+
+          <div
+            className="upt219UserProfileTheme"
+            onClick={() => {
+              dispatch(toggleTheme(theme));
+            }}
+          >
+            {theme === LIGHT ? (
+              <FontAwesomeIcon icon={faSun} />
+            ) : (
+              <FontAwesomeIcon icon={faMoon} />
+            )}
+          </div>
           <FontAwesomeIcon
             className="upi219UserProfileIcon"
             icon={faUserCircle}
