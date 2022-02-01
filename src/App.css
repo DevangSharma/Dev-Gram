@@ -1,10 +1,10 @@
 :root {
   --primaryGreen: #00d09b;
   --secondaryGreen: #e5f9f5;
-  --primaryGray: #44475a;
+  --primaryMainColor: #44475a;
   --primaryBlue: #5366ff;
-  --backgroundGray: #f6f6f7;
-  --primaryWhite: #ffffff;
+  --primaryBackground: #f6f6f7;
+  --primaryColor: #ffffff;
   --darkWhite: #ebebeb;
   --darkGray: #121212;
 }

@@ -10,8 +10,11 @@ import { useNavigate } from "react-router-dom";
 import useTheme from "../../utils/getTheme";
 import { LIGHT } from "../../redux/theme/themeActionTypes";
 import { toggleTheme } from "../../redux/actionCreators";
+import { useDispatch } from "react-redux";
 function Navbar() {
   const navigate = useNavigate();
+
+  const dispatch = useDispatch();
 
   const theme = useTheme();
 
@@ -34,9 +37,7 @@ function Navbar() {
         <div
           className="upi219UserProfileIconGroup"
           onClick={() => {
-            console.log("button");
-
-            toggleTheme(theme);
+            dispatch(toggleTheme(theme));
           }}
         >
           {theme === LIGHT ? (
@@ -47,7 +48,7 @@ function Navbar() {
             />
           ) : (
             <FontAwesomeIcon
-              className="upi219UserProfileTheme"
+              className="upt219UserProfileTheme"
               icon={faMoon}
               size="2x"
             />

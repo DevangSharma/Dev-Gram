@@ -3,9 +3,9 @@
   margin-top: 24px;
   grid-template-columns: 1fr 2fr;
   width: 100%;
-  color: var(--primaryGray);
+  color: var(--primaryMainColor);
   border-radius: 8px;
-  background-color: var(--primaryWhite);
+  background-color: var(--primaryColor);
   padding: 12px 0;
 }
 

@@ -8,8 +8,6 @@ function FeedPage() {
   const postsData = useFetchPosts();
 
   useEffect(() => {
-    console.log(postsData.pageNumber);
-
     postsData.fetchPosts(postsData.pageNumber);
   }, [postsData.pageNumber]);
 

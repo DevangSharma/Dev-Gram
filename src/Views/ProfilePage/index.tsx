@@ -30,14 +30,10 @@ function ProfilePage() {
   }, []);
 
   useEffect(() => {
-    console.log("user cleared");
-
     clearUser();
   }, [username]);
 
   useEffect(() => {
-    console.log(postsData.pageNumber);
-
     postsData.fetchPosts(postsData.pageNumber);
   }, [postsData.pageNumber]);
 

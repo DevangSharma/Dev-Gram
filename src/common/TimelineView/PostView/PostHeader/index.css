@@ -13,11 +13,11 @@
 }
 
 .pvu219PostViewUsername {
-  color: var(--primaryGray);
+  color: var(--primaryMainColor);
 }
 
 .pvu219PostViewMenu {
-  color: var(--primaryGray);
+  color: var(--primaryMainColor);
   margin-right: 4px;
 }
 

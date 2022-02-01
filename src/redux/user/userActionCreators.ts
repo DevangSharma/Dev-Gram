@@ -77,8 +77,6 @@ export const clearUser = () => {
     console.log("clear user called");
     
     return async (dispatch: ThunkDispatch<{},void,AnyAction>) => {
-        console.log("clear user executed");
-
         dispatch({
             type: CLEAR_USER,
         });

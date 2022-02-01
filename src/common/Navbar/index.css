@@ -1,12 +1,12 @@
 .nvc219NavbarContainer {
   position: fixed;
-  background-color: var(--primaryWhite);
+  background-color: var(--primaryColor);
   padding: 8px;
   width: 100%;
   display: inline-flex;
   justify-content: center;
   box-sizing: border-box;
-  box-shadow: 0 0 0.5em var(--primaryGray);
+  border-bottom: 1px solid var(--primaryMainColor);
   overflow: hidden;
   top: 0;
 }
@@ -28,16 +28,16 @@
 
 .nav219NavbarHeading {
   font-size: 2em;
-  color: var(--primaryGray);
+  color: var(--primaryMainColor);
 }
 
 .upi219UserProfileIcon {
-  color: var(--primaryGray);
+  color: var(--primaryMainColor);
 }
 
 .upt219UserProfileTheme {
   align-self: center;
-  color: var(--primaryGray);
+  color: var(--primaryMainColor);
   font-size: 24px;
   padding-right: 8px;
 }
