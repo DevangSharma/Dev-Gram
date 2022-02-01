@@ -24,4 +24,5 @@
 .pug219PostViewUserGroup {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }

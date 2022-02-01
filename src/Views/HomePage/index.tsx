@@ -1,7 +1,7 @@
 import React from "react";
 import FeedPage from "../FeedPage";
 import ProfilePage from "../ProfilePage";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./index.css";
 import { setInitialTheme } from "../../utils/getTheme";
 

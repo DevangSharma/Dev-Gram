@@ -8,7 +8,7 @@ function PostView({ postData }: any) {
     <div className="pvc219PostViewContainer">
       <PostHeader userData={postData.user} />
       <NetworkImage url={postData.urls.small} />
-      <PostFooter likes={postData.likes} />
+      <PostFooter postData={postData} />
     </div>
   );
 }

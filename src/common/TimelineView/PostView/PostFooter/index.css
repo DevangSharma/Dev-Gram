@@ -1,0 +1,23 @@
+.pfd219PostFooterDiv {
+  margin: 8px 0;
+  color: var(--primaryMainColor);
+}
+
+.pld219PostLikesDiv {
+  margin: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pdd219PostDescriptionDiv {
+  margin: 8px;
+}
+
+.pci219PostCommentInput {
+  margin: 8px;
+  display: inline;
+  width: 98%;
+
+  box-sizing: border-box;
+  padding: 8px;
+}

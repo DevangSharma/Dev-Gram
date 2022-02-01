@@ -24,10 +24,13 @@
   height: 36px;
   width: 36px;
   object-fit: contain;
+  cursor: pointer;
 }
 
 .nav219NavbarHeading {
   font-size: 2em;
+  cursor: pointer;
+
   color: var(--primaryMainColor);
 }
 
@@ -44,6 +47,8 @@
 
 .upi219UserProfileIconGroup {
   display: inline-flex;
+  cursor: pointer;
+
   justify-content: center;
   align-content: center;
 }

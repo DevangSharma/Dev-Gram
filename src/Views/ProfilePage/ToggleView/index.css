@@ -15,6 +15,7 @@
   background-color: var(--primaryColor);
   border: none;
   color: var(--primaryMainColor);
+  cursor: pointer;
 }
 
 .tvb219ToggleViewButton p {

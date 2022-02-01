@@ -7,6 +7,7 @@
   border-radius: 8px;
   background-color: var(--primaryColor);
   padding: 12px 0;
+  column-gap: 12px;
 }
 
 .ppi219ProfilePageImage img {
