@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import "./index.css";
 import PostView from "./PostView";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function TimelineView({ postsData }: any) {
   const { isLoading, postList, lastPostReached } = postsData;
 
   return (
     <div className="tlc219TimelineContainer">
-      {isLoading && <h2>Data is Loading</h2>}
       {postList.map((item: any, index: number) => {
         if (index === postList.length - 5) {
           return (
@@ -23,6 +23,14 @@ function TimelineView({ postsData }: any) {
           </div>
         );
       })}
+
+      {isLoading && (
+        <ClipLoader
+          color={document.documentElement.style.getPropertyValue(
+            "--primaryMainColor"
+          )}
+        />
+      )}
     </div>
   );
 }

@@ -1,4 +1,5 @@
 export const CACHED_FEED_POSTS = "CACHED_FEED_POSTS-";
 export const EXPIRY_TIME = 1000 * 30;
-export const CACHED_USER = "CACHED_USER-";
-export const CACHED_USER_IMAGES = "CACHED_USER_IMAGES-";
+export const THEME = "THEME-";
+export const LIGHT = "LIGHT";
+export const DARK = "DARK";

@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import NetworkImage from "../../../common/NetworkImages";
+import ClipLoader from "react-spinners/ClipLoader";
+
 import "./index.css";
 function GridView({ postsData }: any) {
   const { isLoading, postList, lastPostReached } = postsData;
 
   return (
     <div className="gvc219GridViewContainer">
-      {isLoading && <h2>Data is Loading</h2>}
       {postList.map((item: any, index: number) => {
         if (index === postList.length - 5) {
           return (
@@ -22,6 +23,14 @@ function GridView({ postsData }: any) {
           </div>
         );
       })}
+
+      {isLoading && (
+        <ClipLoader
+          color={document.documentElement.style.getPropertyValue(
+            "--primaryMainColor"
+          )}
+        />
+      )}
     </div>
   );
 }

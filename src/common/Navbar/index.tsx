@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "font-awesome/css/font-awesome.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
@@ -7,17 +7,15 @@ import GrowwLogo from "../../assets/images/GrowwLogo.png";
 
 import "./index.css";
 import { useNavigate } from "react-router-dom";
-import useTheme from "../../utils/getTheme";
-import { LIGHT } from "../../redux/theme/themeActionTypes";
-import { fetchPosts, toggleTheme } from "../../redux/actionCreators";
+import getTheme, { toggleTheme } from "../../utils/getTheme";
+import { fetchPosts } from "../../redux/actionCreators";
 import { useDispatch } from "react-redux";
 import { clearCachedPosts } from "../../utils/apiHelper";
+import { LIGHT } from "../../constants/localStorage";
 function Navbar() {
   const navigate = useNavigate();
 
-  const dispatch = useDispatch();
-
-  const theme = useTheme();
+  const [theme, updateTheme] = useState(getTheme());
 
   const onLogoClicked = () => {
     navigate("/");
@@ -48,7 +46,8 @@ function Navbar() {
           <div
             className="upt219UserProfileTheme"
             onClick={() => {
-              dispatch(toggleTheme(theme));
+              toggleTheme();
+              updateTheme(getTheme());
             }}
           >
             {theme === LIGHT ? (

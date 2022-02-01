@@ -11,12 +11,12 @@ import ToggleViews from "./ToggleView";
 import { useParams } from "react-router-dom";
 import TimelineView from "../../common/TimelineView";
 import useFetchUserImages from "./utills/useFetchUserImages";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function ProfilePage() {
   const dispatch = useDispatch();
   const { getUserData, clearUser } = bindActionCreators(actions, dispatch);
   const state = useSelector((state: stateType): any => state.userData);
-  const theme = useSelector((state: stateType): any => state.theme);
   const [isGridView, setGridView] = useState(true);
 
   const { username } = useParams();
@@ -36,7 +36,13 @@ function ProfilePage() {
   }, [postsData.pageNumber]);
 
   if (state.isLoading) {
-    return <h2>Data is loading</h2>;
+    return (
+      <ClipLoader
+        color={document.documentElement.style.getPropertyValue(
+          "--primaryMainColor"
+        )}
+      />
+    );
   }
   return (
     <div>
