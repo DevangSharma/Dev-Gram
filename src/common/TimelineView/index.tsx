@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import "./index.css";
 import PostView from "./PostView";
 
-function TimelineView({ fetchHandler }: any) {
+function TimelineView({ postsData }: any) {
   const { pageNumber, fetchPosts, isLoading, postList, lastPostReached } =
-    fetchHandler();
+    postsData;
 
   useEffect(() => {
     fetchPosts(pageNumber);
@@ -12,7 +12,7 @@ function TimelineView({ fetchHandler }: any) {
 
   return (
     <div className="tlc219TimelineContainer">
-      <div>{isLoading && <h2>Data is Loading</h2>}</div>
+      {isLoading && <h2>Data is Loading</h2>}
       {postList.map((item: any, index: number) => {
         if (index === postList.length - 5) {
           return (

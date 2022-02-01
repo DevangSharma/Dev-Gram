@@ -11,19 +11,26 @@ import ToggleViews from "./ToggleView";
 import { useParams } from "react-router-dom";
 import TimelineView from "../../common/TimelineView";
 import useFetchUserImages from "./utills/useFetchUserImages";
-import { clearUser } from "../../redux/actionCreators";
 
 function ProfilePage() {
   const dispatch = useDispatch();
-  const { getUserData } = bindActionCreators(actions, dispatch);
+  const { getUserData, clearUser } = bindActionCreators(actions, dispatch);
   const state = useSelector((state: stateType): any => state.userData);
   const [isGridView, setGridView] = useState(true);
 
   const { username } = useParams();
 
+  const postsData = useFetchUserImages();
+
   useEffect(() => {
     getUserData(username!);
   }, []);
+
+  useEffect(() => {
+    console.log("user cleared");
+
+    clearUser();
+  }, [username]);
 
   if (state.isLoading) {
     return <h2>Data is loading</h2>;
@@ -31,18 +38,22 @@ function ProfilePage() {
   return (
     <div>
       <Navbar />
-      <div className="ppc219ProfilePageContainer">
-        <ProfilePageHeader userData={state.userData} />
-        <ToggleViews isGridView={isGridView} setGridView={setGridView} />
+      {state.isLoading ? (
+        <h2>Data is loading</h2>
+      ) : (
+        <div className="ppc219ProfilePageContainer">
+          <ProfilePageHeader userData={state.userData} />
+          <ToggleViews isGridView={isGridView} setGridView={setGridView} />
 
-        <div>
-          {isGridView ? (
-            <GridView fetchHandler={useFetchUserImages} />
-          ) : (
-            <TimelineView fetchHandler={useFetchUserImages} />
-          )}
+          <div>
+            {isGridView ? (
+              <GridView postsData={postsData} />
+            ) : (
+              <TimelineView postsData={postsData} />
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

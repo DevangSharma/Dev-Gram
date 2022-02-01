@@ -1,17 +1,16 @@
 import React, { useEffect } from "react";
 import NetworkImage from "../../../common/NetworkImages";
 import "./index.css";
-function GridView({ fetchHandler }: any) {
+function GridView({ postsData }: any) {
   const { pageNumber, fetchPosts, isLoading, postList, lastPostReached } =
-    fetchHandler();
-
+    postsData;
   useEffect(() => {
     fetchPosts(pageNumber);
   }, [pageNumber]);
 
   return (
     <div className="gvc219GridViewContainer">
-      <div>{isLoading && <h2>Data is Loading</h2>}</div>
+      {isLoading && <h2>Data is Loading</h2>}
       {postList.map((item: any, index: number) => {
         if (index === postList.length - 5) {
           return (

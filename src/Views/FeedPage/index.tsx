@@ -4,11 +4,12 @@ import "./index.css";
 import useFetchPosts from "./utils/useFetchPosts";
 
 function FeedPage() {
+  const postsData = useFetchPosts();
   return (
     <div>
       <Navbar />
       <div className="fpc219FeedPageContainer">
-        <TimelineView fetchHandler={useFetchPosts} />
+        <TimelineView postsData={postsData} />
       </div>
     </div>
   );

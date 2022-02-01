@@ -15,14 +15,13 @@ import * as actions from "../../../redux/actionCreators";
   
     const observer: any = useRef();
 
-    const {username} = useParams();
-
-    console.log(username);
-    
+    const {username} = useParams();    
   
     const lastPostReached = useCallback(
       (node) => {
-        if (state.isLoadingImages) return;
+        if (state.isLoadingImages) return "You are all caught up"
+
+        if(state.userImages.length == state.userData.total_photos) return;
   
         if (observer.current) observer.current.disconnect();
   
