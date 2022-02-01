@@ -48,3 +48,7 @@
 .fal219FontAwesomeLocation {
   margin-right: 8px;
 }
+
+.phb219ProfileHeaderBio a {
+  color: var(--primaryBlue);
+}

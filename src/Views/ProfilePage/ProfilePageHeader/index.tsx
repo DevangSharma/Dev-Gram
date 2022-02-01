@@ -26,22 +26,31 @@ function ProfilePageHeader({ userData }: any) {
           </p>
         </div>
 
-        <h3>{userData.first_name + " " + userData.last_name}</h3>
+        {userData.first_name && (
+          <h3>
+            {userData.first_name +
+              (userData.last_name ? " " + userData.last_name : "")}
+          </h3>
+        )}
 
         <div className="phb219ProfileHeaderBio">
           <p>{userData.bio}</p>
-          <p>
-            <FontAwesomeIcon
-              icon={faMapMarkerAlt}
-              className="fal219FontAwesomeLocation"
-            />
-            {userData.location}
-          </p>
-          <p>
-            <a href={userData.social.portfolio_url} target="_blank">
-              {userData.social.portfolio_url}
-            </a>
-          </p>
+          {userData.location && (
+            <p>
+              <FontAwesomeIcon
+                icon={faMapMarkerAlt}
+                className="fal219FontAwesomeLocation"
+              />
+              {userData.location}
+            </p>
+          )}
+          {userData.social.portfolio_url && (
+            <p>
+              <a href={userData.social.portfolio_url} target="_blank">
+                {userData.social.portfolio_url}
+              </a>
+            </p>
+          )}
         </div>
       </div>
     </div>
