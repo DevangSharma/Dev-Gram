@@ -11,25 +11,25 @@ import * as actions from "../../../redux/actionCreators";
     const state = useSelector((state: stateType) => state.posts);
   
     const [pageNumber, setPageNumber] = useState(1);
-  
-    const observer: any = useRef();
-  
+    
     const lastPostReached = useCallback(
       (node) => {
         if (state.isLoading) return;
-  
-        if (observer.current) observer.current.disconnect();
-  
-        observer.current = new IntersectionObserver((entries) => {
+    
+        const observer = new IntersectionObserver((entries) => {
           if (entries[0].isIntersecting) {
             setPageNumber((previousNumber) => previousNumber + 1);
+            observer.unobserve(entries[0].target)
           }
         });
   
-        if (node) observer.current.observe(node);
+        if (node) 
+        {
+          observer.observe(node);
+        }
       },
   
-      [state.isLoading]
+      [state.postList]
     );
 
     return {

@@ -35,6 +35,12 @@ function ProfilePage() {
     clearUser();
   }, [username]);
 
+  useEffect(() => {
+    console.log(postsData.pageNumber);
+
+    postsData.fetchPosts(postsData.pageNumber);
+  }, [postsData.pageNumber]);
+
   if (state.isLoading) {
     return <h2>Data is loading</h2>;
   }

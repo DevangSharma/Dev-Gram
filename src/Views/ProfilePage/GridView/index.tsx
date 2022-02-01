@@ -2,11 +2,7 @@ import React, { useEffect } from "react";
 import NetworkImage from "../../../common/NetworkImages";
 import "./index.css";
 function GridView({ postsData }: any) {
-  const { pageNumber, fetchPosts, isLoading, postList, lastPostReached } =
-    postsData;
-  useEffect(() => {
-    fetchPosts(pageNumber);
-  }, [pageNumber]);
+  const { isLoading, postList, lastPostReached } = postsData;
 
   return (
     <div className="gvc219GridViewContainer">
@@ -15,14 +11,14 @@ function GridView({ postsData }: any) {
         if (index === postList.length - 5) {
           return (
             <div ref={lastPostReached} key={item.id}>
-              <NetworkImage key={item.id} url={item.urls.regular} />;
+              <NetworkImage key={item.id} url={item.urls.regular} />
             </div>
           );
         }
 
         return (
           <div key={item.id}>
-            <NetworkImage key={item.id} url={item.urls.regular} />;
+            <NetworkImage key={item.id} url={item.urls.regular} />
           </div>
         );
       })}

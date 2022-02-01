@@ -13,25 +13,25 @@ import * as actions from "../../../redux/actionCreators";
   
     const [pageNumber, setPageNumber] = useState(1);
   
-    const observer: any = useRef();
-
     const {username} = useParams();    
   
     const lastPostReached = useCallback(
       (node) => {
-        if (state.isLoadingImages) return "You are all caught up"
+        if (state.isLoadingImages) return 
 
-        if(state.userImages.length == state.userData.total_photos) return;
-  
-        if (observer.current) observer.current.disconnect();
-  
-        observer.current = new IntersectionObserver((entries) => {
+        if(state.userImages.length === state.userData.total_photos) return "You are all caught up";
+    
+       const observer =  new IntersectionObserver((entries,observe) => {
           if (entries[0].isIntersecting) {
             setPageNumber((previousNumber) => previousNumber + 1);
+            observe.unobserve(entries[0].target)
           }
         });
   
-        if (node) observer.current.observe(node);
+        if (node) 
+        {
+          observer.observe(node);
+        }
       },
   
       [state.isLoadingImages]

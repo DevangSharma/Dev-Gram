@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navbar from "../../common/Navbar";
 import TimelineView from "../../common/TimelineView";
 import "./index.css";
@@ -5,6 +6,13 @@ import useFetchPosts from "./utils/useFetchPosts";
 
 function FeedPage() {
   const postsData = useFetchPosts();
+
+  useEffect(() => {
+    console.log(postsData.pageNumber);
+
+    postsData.fetchPosts(postsData.pageNumber);
+  }, [postsData.pageNumber]);
+
   return (
     <div>
       <Navbar />

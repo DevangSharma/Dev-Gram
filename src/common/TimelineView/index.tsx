@@ -3,12 +3,7 @@ import "./index.css";
 import PostView from "./PostView";
 
 function TimelineView({ postsData }: any) {
-  const { pageNumber, fetchPosts, isLoading, postList, lastPostReached } =
-    postsData;
-
-  useEffect(() => {
-    fetchPosts(pageNumber);
-  }, [pageNumber]);
+  const { isLoading, postList, lastPostReached } = postsData;
 
   return (
     <div className="tlc219TimelineContainer">
