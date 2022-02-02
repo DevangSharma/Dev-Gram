@@ -23,9 +23,13 @@ export const getUserData = (username: string) => {
       params: {
         client_id: CLIENT_ID,
       },
-    }).then((res) => {
-      dispatch(setUser(res.data));
-    });
+    })
+      .then((res) => {
+        dispatch(setUser(res.data));
+      })
+      .catch((err) => {
+        alert(err);
+      });
   };
 };
 
@@ -65,7 +69,9 @@ export const getUserImages = (username: string, pageNumber: number) => {
       .then((res) => {
         dispatch(setUserImages(res.data));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        alert(err);
+      });
   };
 };
 

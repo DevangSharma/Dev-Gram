@@ -4,6 +4,7 @@ import { FETCH_POSTS, SET_POSTS } from "./PostActionTypes";
 import { ThunkDispatch } from "redux-thunk";
 import { BASE_URL, CLIENT_ID } from "../../constants/API";
 import { getCachedPosts, setCachedPosts } from "../../utils/apiHelper";
+import { useNavigate } from "react-router-dom";
 
 export const fetchPosts = (pageNumber: number) => {
   return async (dispatch: ThunkDispatch<{}, void, AnyAction>) => {
@@ -24,11 +25,15 @@ export const fetchPosts = (pageNumber: number) => {
           per_page: 10,
           page: pageNumber,
         },
-      }).then((res) => {
-        cachedData = res.data;
-        setCachedPosts(pageNumber, cachedData);
-        dispatch(setPosts(cachedData));
-      });
+      })
+        .then((res) => {
+          cachedData = res.data;
+          setCachedPosts(pageNumber, cachedData);
+          dispatch(setPosts(cachedData));
+        })
+        .catch((err) => {
+          alert(err);
+        });
     }
   };
 };

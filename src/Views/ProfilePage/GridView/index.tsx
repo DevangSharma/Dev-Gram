@@ -4,10 +4,9 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 import "./index.css";
 import NetworkModal from "../../../common/NetworkModal";
+import GridPostView from "./GridPostView.tsx";
 function GridView({ postsData }: any) {
   const { isLoading, postList, lastPostReached } = postsData;
-
-  const [isModalOpen, setModalOpen] = useState(false);
 
   return (
     <div className="gvc219GridViewContainer">
@@ -15,38 +14,14 @@ function GridView({ postsData }: any) {
         if (index === postList.length - 5) {
           return (
             <div ref={lastPostReached} key={item.id}>
-              <div
-                onClick={() => {
-                  setModalOpen(true);
-                }}
-              >
-                <NetworkImage key={item.id} url={item.urls.regular} />
-              </div>
-
-              <NetworkModal
-                isOpen={isModalOpen}
-                toggleModal={setModalOpen}
-                url={item.urls.regular}
-              />
+              <GridPostView item={item} />
             </div>
           );
         }
 
         return (
           <div key={item.id}>
-            <div
-              onClick={() => {
-                setModalOpen(true);
-              }}
-            >
-              <NetworkImage key={item.id} url={item.urls.regular} />
-            </div>
-
-            <NetworkModal
-              isOpen={isModalOpen}
-              toggleModal={setModalOpen}
-              url={item.urls.regular}
-            />
+            <GridPostView item={item} />
           </div>
         );
       })}

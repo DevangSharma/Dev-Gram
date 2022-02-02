@@ -1,3 +1,4 @@
+import { relative } from "node:path/win32";
 import React from "react";
 import Modal from "react-modal";
 import NetworkImage from "../NetworkImages";
