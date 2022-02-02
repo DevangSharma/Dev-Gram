@@ -1,0 +1,25 @@
+.fsd219FeedStoriesDiv {
+  display: inline-flex;
+  justify-content: start;
+  width: 100vw;
+  max-width: 720px;
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding: 0 8px;
+  background-color: var(--primaryColor);
+  box-sizing: border-box;
+  margin: 0 8px;
+  margin-top: 8px;
+  border-radius: 8px;
+}
+
+.spi219StoryProfileImage {
+  height: 60px;
+  flex-shrink: 0;
+
+  margin: 8px;
+  border-radius: 50%;
+  padding: 2px;
+
+  border: 2px solid var(--primaryGreen);
+}

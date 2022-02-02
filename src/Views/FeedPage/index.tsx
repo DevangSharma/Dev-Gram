@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Navbar from "../../common/Navbar";
 import TimelineView from "../../common/TimelineView";
 import "./index.css";
+import Stories from "./Stories";
 import useFetchPosts from "./utils/useFetchPosts";
 
 function FeedPage() {
@@ -12,9 +13,10 @@ function FeedPage() {
   }, [postsData.pageNumber]);
 
   return (
-    <div>
+    <div className="fpc219FeedPageContainer">
       <Navbar />
-      <div className="fpc219FeedPageContainer">
+      <Stories postData={postsData} />
+      <div>
         <TimelineView postsData={postsData} />
       </div>
     </div>

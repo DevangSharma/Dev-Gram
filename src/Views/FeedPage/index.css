@@ -1,4 +1,5 @@
 .fpc219FeedPageContainer {
   display: grid;
   margin-top: 60px;
+  justify-content: center;
 }
