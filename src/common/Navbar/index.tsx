@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "font-awesome/css/font-awesome.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
@@ -8,8 +8,6 @@ import growwLogo from "../../assets/images/growwLogo.png";
 import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
 import getTheme, { toggleTheme } from "../../utils/getTheme";
-import { fetchPosts } from "../../store/actionCreators";
-import { useDispatch } from "react-redux";
 import { clearCachedPosts } from "../../utils/apiHelper";
 import { LIGHT } from "../../constants/localStorage";
 function Navbar() {
@@ -33,6 +31,7 @@ function Navbar() {
           src={growwLogo}
           onClick={onLogoClicked}
           className="img219LogoImage"
+          alt="Groww Logo"
         />
         <h3 className="nav219NavbarHeading" onClick={onLogoClicked}>
           Growwgram

@@ -1,7 +1,7 @@
-import { CACHED_FEED_POSTS } from "../constants/localStorage";
+import { CACHED_FEED_POSTS, PAGES_TO_CACHE } from "../constants/localStorage";
 
 export const getCachedPosts = (pageNumber: number) => {
-  if (pageNumber > 2) return null;
+  if (pageNumber > PAGES_TO_CACHE) return null;
 
   const data = localStorage.getItem(CACHED_FEED_POSTS + pageNumber.toString());
 
@@ -11,7 +11,7 @@ export const getCachedPosts = (pageNumber: number) => {
 };
 
 export const setCachedPosts = (pageNumber: number, value: {}) => {
-  if (pageNumber > 2) return;
+  if (pageNumber > PAGES_TO_CACHE) return;
 
   localStorage.setItem(
     CACHED_FEED_POSTS + pageNumber.toString(),
@@ -20,6 +20,7 @@ export const setCachedPosts = (pageNumber: number, value: {}) => {
 };
 
 export const clearCachedPosts = () => {
-  localStorage.removeItem(CACHED_FEED_POSTS + "1");
-  localStorage.removeItem(CACHED_FEED_POSTS + "2");
+  for (let pageNumber = 0; pageNumber < PAGES_TO_CACHE; pageNumber++) {
+    localStorage.removeItem(CACHED_FEED_POSTS + pageNumber.toString);
+  }
 };

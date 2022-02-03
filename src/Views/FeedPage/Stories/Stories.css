@@ -1,6 +1,6 @@
 .fsd219FeedStoriesDiv {
   display: inline-flex;
-  justify-content: start;
+  justify-content: flex-start;
   width: 100vw;
   max-width: 720px;
   overflow-x: scroll;
