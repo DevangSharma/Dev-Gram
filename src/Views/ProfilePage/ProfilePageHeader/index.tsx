@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import NetworkImage from "../../../common/NetworkImages";
-import "./index.css";
+import "./ProfilePage.css";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 function ProfilePageHeader({ userData }: any) {
   return (

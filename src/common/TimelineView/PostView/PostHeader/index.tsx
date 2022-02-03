@@ -1,6 +1,6 @@
 import React from "react";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
-import "./index.css";
+import "./PostHeader.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 

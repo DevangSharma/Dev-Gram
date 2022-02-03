@@ -2,7 +2,7 @@ import React from "react";
 import FeedPage from "../FeedPage";
 import ProfilePage from "../ProfilePage";
 import { Route, Routes } from "react-router-dom";
-import "./index.css";
+import "./HomePage.css";
 import { setInitialTheme } from "../../utils/getTheme";
 
 function HomePage() {

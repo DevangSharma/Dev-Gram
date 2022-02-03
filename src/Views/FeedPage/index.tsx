@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Navbar from "../../common/Navbar";
 import TimelineView from "../../common/TimelineView";
-import "./index.css";
+import "./FeedPage.css";
 import Stories from "./Stories";
 import useFetchPosts from "./utils/useFetchPosts";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css";
+import "./NetworkImage.css";
 function NetworkImage(props: any) {
   return (
     <div className="nid219NetworkDiv">

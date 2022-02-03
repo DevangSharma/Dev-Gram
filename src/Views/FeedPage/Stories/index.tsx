@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import NetworkImage from "../../../common/NetworkImages";
-import "./index.css";
+import "./Stories.css";
 
 function Stories({ postData }: any) {
   const { postList } = postData;

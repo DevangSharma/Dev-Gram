@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./index.css";
+import "./TimelineView.css";
 import PostView from "./PostView";
 import ClipLoader from "react-spinners/ClipLoader";
 

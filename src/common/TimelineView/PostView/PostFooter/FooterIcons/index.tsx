@@ -5,7 +5,7 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import "./index.css";
+import "./FooterIcons.css";
 
 function FooterIcons() {
   return (

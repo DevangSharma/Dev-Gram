@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { DARK, LIGHT, THEME } from "../constants/localStorage";
-import { stateType } from "../redux";
+import { stateType } from "../store/reducer";
 
 function getTheme() {
   const theme = localStorage.getItem(THEME);

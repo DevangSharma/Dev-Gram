@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import NetworkImage from "../../../common/NetworkImages";
 import ClipLoader from "react-spinners/ClipLoader";
 
-import "./index.css";
+import "./GridView.css";
 import NetworkModal from "../../../common/NetworkModal";
 import GridPostView from "./GridPostView.tsx";
 function GridView({ postsData }: any) {

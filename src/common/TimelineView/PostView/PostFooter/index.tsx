@@ -1,6 +1,6 @@
 import React from "react";
 import FooterIcons from "./FooterIcons";
-import "./index.css";
+import "./PostFooter.css";
 
 function PostFooter({ postData }: any) {
   return (

@@ -3,12 +3,12 @@ import "font-awesome/css/font-awesome.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import { faSun, faMoon, faRedoAlt } from "@fortawesome/free-solid-svg-icons";
-import GrowwLogo from "../../assets/images/GrowwLogo.png";
+import growwLogo from "../../assets/images/growwLogo.png";
 
-import "./index.css";
+import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
 import getTheme, { toggleTheme } from "../../utils/getTheme";
-import { fetchPosts } from "../../redux/actionCreators";
+import { fetchPosts } from "../../store/actionCreators";
 import { useDispatch } from "react-redux";
 import { clearCachedPosts } from "../../utils/apiHelper";
 import { LIGHT } from "../../constants/localStorage";
@@ -30,7 +30,7 @@ function Navbar() {
     <div className="nvc219NavbarContainer">
       <div className="nvi219NavbarItems">
         <img
-          src={GrowwLogo}
+          src={growwLogo}
           onClick={onLogoClicked}
           className="img219LogoImage"
         />

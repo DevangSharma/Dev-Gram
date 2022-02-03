@@ -2,14 +2,14 @@ import axios from "axios";
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 import { BASE_URL, CLIENT_ID } from "../../constants/API";
-import { FETCH_POSTS } from "../posts/PostActionTypes";
+import { FETCH_POSTS } from "../posts/actionTypes";
 import {
   CLEAR_USER,
   FETCH_USER,
   FETCH_USER_IMAGES,
   SET_USER,
   SET_USER_IMAGES,
-} from "./userActionTypes";
+} from "./actionTypes";
 
 export const getUserData = (username: string) => {
   return async (dispatch: ThunkDispatch<{}, void, AnyAction>) => {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { AnyAction } from "redux";
-import { FETCH_POSTS, SET_POSTS } from "./PostActionTypes";
+import { FETCH_POSTS, SET_POSTS } from "./actionTypes";
 import { ThunkDispatch } from "redux-thunk";
 import { BASE_URL, CLIENT_ID } from "../../constants/API";
 import { getCachedPosts, setCachedPosts } from "../../utils/apiHelper";

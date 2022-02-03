@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NetworkImage from "../../NetworkImages";
 import PostFooter from "./PostFooter";
 import PostHeader from "./PostHeader";
-import "./index.css";
+import "./PostView.css";
 import NetworkModal from "../../NetworkModal";
 
 function PostView({ postData }: any) {
