@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import Navbar from "../../common/Navbar";
 import TimelineView from "../../common/TimelineView";
 import "./FeedPage.css";
@@ -6,10 +7,11 @@ import Stories from "./Stories";
 import useFetchPosts from "./utils/useFetchPosts";
 
 function FeedPage() {
+  const dispatch = useDispatch();
   const postsData = useFetchPosts();
 
   useEffect(() => {
-    postsData.fetchPosts(postsData.pageNumber);
+    dispatch(postsData.fetchPosts(postsData.pageNumber));
   }, [postsData.pageNumber]);
 
   return (

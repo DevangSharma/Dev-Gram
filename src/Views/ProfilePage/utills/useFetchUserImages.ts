@@ -1,13 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { bindActionCreators } from "redux";
+import { getUserImages } from "../../../store/actionCreators";
 import { stateType } from "../../../store/reducer";
-import * as actions from "../../../store/actionCreators";
 
 function useFetchUserImages() {
-  const dispatch = useDispatch();
-  const { getUserImages } = bindActionCreators(actions, dispatch);
   const state = useSelector((state: stateType) => state.userData);
 
   const [pageNumber, setPageNumber] = useState(1);

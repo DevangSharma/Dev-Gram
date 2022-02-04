@@ -16,6 +16,7 @@ function Stories({ postData }: any) {
       {postList.map((item: any, index: number) => {
         return (
           <div
+            key={item.id}
             onClick={() => {
               onUserClicked(item.user.username);
             }}

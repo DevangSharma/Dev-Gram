@@ -1,12 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { bindActionCreators } from "redux";
+import { useSelector } from "react-redux";
 import { stateType } from "../../../store/reducer";
-import * as actions from "../../../store/actionCreators";
+import { fetchPosts } from "../../../store/actionCreators";
 
 function useFetchPosts() {
-  const dispatch = useDispatch();
-  const { fetchPosts } = bindActionCreators(actions, dispatch);
   const state = useSelector((state: stateType) => state.posts);
 
   const [pageNumber, setPageNumber] = useState(1);

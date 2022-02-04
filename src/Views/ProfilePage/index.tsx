@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { bindActionCreators } from "redux";
 import Navbar from "../../common/Navbar";
-import * as actions from "../../store/actionCreators";
 import { stateType } from "../../store/reducer";
 import ProfilePageHeader from "./ProfilePageHeader";
 import "./ProfilePage.css";
@@ -12,10 +10,10 @@ import { useParams } from "react-router-dom";
 import TimelineView from "../../common/TimelineView";
 import useFetchUserImages from "./utills/useFetchUserImages";
 import ClipLoader from "react-spinners/ClipLoader";
+import { clearUser, getUserData } from "../../store/actionCreators";
 
 function ProfilePage() {
   const dispatch = useDispatch();
-  const { getUserData, clearUser } = bindActionCreators(actions, dispatch);
   const state = useSelector((state: stateType): any => state.userData);
   const [isGridView, setGridView] = useState(true);
 
@@ -24,15 +22,15 @@ function ProfilePage() {
   const postsData = useFetchUserImages();
 
   useEffect(() => {
-    getUserData(username!);
+    dispatch(getUserData(username!));
   }, []);
 
   useEffect(() => {
-    clearUser();
+    dispatch(clearUser());
   }, [username]);
 
   useEffect(() => {
-    postsData.fetchPosts(postsData.pageNumber);
+    dispatch(postsData.fetchPosts(postsData.pageNumber));
   }, [postsData.pageNumber]);
 
   if (state.isLoading) {

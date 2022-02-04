@@ -20,7 +20,7 @@ export const setCachedPosts = (pageNumber: number, value: {}) => {
 };
 
 export const clearCachedPosts = () => {
-  for (let pageNumber = 0; pageNumber < PAGES_TO_CACHE; pageNumber++) {
-    localStorage.removeItem(CACHED_FEED_POSTS + pageNumber.toString);
+  for (let pageNumber = 1; pageNumber <= PAGES_TO_CACHE; pageNumber++) {
+    localStorage.removeItem(CACHED_FEED_POSTS + pageNumber.toString());
   }
 };
