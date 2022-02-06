@@ -1,7 +1,7 @@
 import axios from "axios";
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
-import { BASE_URL } from "../../constants/API";
+import { userConfig, userImagesConfig } from "../../utils/api/apiConfigs";
 import {
   CLEAR_USER,
   FETCH_USER,
@@ -16,13 +16,9 @@ export const getUserData = (username: string) => {
       type: FETCH_USER,
     });
 
-    axios({
-      method: "GET",
-      url: BASE_URL + "users/" + username,
-      params: {
-        client_id: process.env.REACT_APP_CLIENT_ID,
-      },
-    })
+    console.log(userConfig(username));
+
+    axios(userConfig(username))
       .then((res) => {
         dispatch(setUser(res.data));
       })
@@ -56,15 +52,7 @@ export const getUserImages = (username: string, pageNumber: number) => {
       type: FETCH_USER_IMAGES,
     });
 
-    axios({
-      method: "GET",
-      url: BASE_URL + "users/" + username + "/photos",
-      params: {
-        client_id: process.env.REACT_APP_CLIENT_ID,
-        per_page: 10,
-        page: pageNumber,
-      },
-    })
+    axios(userImagesConfig(username, pageNumber))
       .then((res) => {
         dispatch(setUserImages(res.data));
       })
