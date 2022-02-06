@@ -1,6 +1,4 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
-import NetworkImage from "../../../common/NetworkImages";
 import "./Stories.css";
 
 function Stories({ postData }: any) {
@@ -24,6 +22,7 @@ function Stories({ postData }: any) {
             <img
               className="spi219StoryProfileImage"
               src={item.user.profile_image.medium}
+              alt="Profile"
             />
           </div>
         );

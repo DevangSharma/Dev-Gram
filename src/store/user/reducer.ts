@@ -1,5 +1,3 @@
-import { type } from "os";
-import { Action } from "redux";
 import {
   CLEAR_USER,
   FETCH_USER,

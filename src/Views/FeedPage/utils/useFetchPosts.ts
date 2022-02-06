@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 import { stateType } from "../../../store/reducer";
 import { fetchPosts } from "../../../store/actionCreators";

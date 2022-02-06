@@ -1,4 +1,3 @@
-import React from "react";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import "./PostHeader.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,6 +15,7 @@ function PostHeader({ userData }: any) {
         <img
           className="pvi219PostViewProfileImage"
           src={userData.profile_image.small}
+          alt="Profile"
         ></img>
         <h3 className="pvu219PostViewUsername">{userData.username}</h3>
       </div>

@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import "./TimelineView.css";
 import PostView from "./PostView";
 import ClipLoader from "react-spinners/ClipLoader";
