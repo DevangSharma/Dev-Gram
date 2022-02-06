@@ -1,8 +1,7 @@
 import axios from "axios";
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
-import { BASE_URL, CLIENT_ID } from "../../constants/API";
-import { FETCH_POSTS } from "../posts/actionTypes";
+import { BASE_URL } from "../../constants/API";
 import {
   CLEAR_USER,
   FETCH_USER,
@@ -21,7 +20,7 @@ export const getUserData = (username: string) => {
       method: "GET",
       url: BASE_URL + "users/" + username,
       params: {
-        client_id: CLIENT_ID,
+        client_id: process.env.REACT_APP_CLIENT_ID,
       },
     })
       .then((res) => {
@@ -61,7 +60,7 @@ export const getUserImages = (username: string, pageNumber: number) => {
       method: "GET",
       url: BASE_URL + "users/" + username + "/photos",
       params: {
-        client_id: CLIENT_ID,
+        client_id: process.env.REACT_APP_CLIENT_ID,
         per_page: 10,
         page: pageNumber,
       },
