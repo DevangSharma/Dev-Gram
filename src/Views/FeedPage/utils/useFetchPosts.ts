@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 import { stateType } from "../../../store/reducer";
-import { fetchPosts } from "../../../store/actionCreators";
+import { getPosts } from "../../../store/actionCreators";
 
 function useFetchPosts() {
   const state = useSelector((state: stateType) => state.posts);
@@ -29,7 +29,7 @@ function useFetchPosts() {
 
   return {
     pageNumber: pageNumber,
-    fetchPosts: fetchPosts,
+    fetchPosts: getPosts,
     isLoading: state.isLoading,
     postList: state.postList,
     lastPostReached: lastPostReached,

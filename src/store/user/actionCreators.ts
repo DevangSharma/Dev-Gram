@@ -2,6 +2,8 @@ import axios from "axios";
 import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 import { userConfig, userImagesConfig } from "../../utils/api/apiConfigs";
+import { fetchUserData } from "../../utils/api/fetchUserData";
+import { fetchUserImages } from "../../utils/api/fetchUserImages";
 import {
   CLEAR_USER,
   FETCH_USER,
@@ -16,15 +18,9 @@ export const getUserData = (username: string) => {
       type: FETCH_USER,
     });
 
-    console.log(userConfig(username));
+    const userData = await fetchUserData(username);
 
-    axios(userConfig(username))
-      .then((res) => {
-        dispatch(setUser(res.data));
-      })
-      .catch((err) => {
-        alert(err);
-      });
+    dispatch(setUser(userData));
   };
 };
 
@@ -52,13 +48,9 @@ export const getUserImages = (username: string, pageNumber: number) => {
       type: FETCH_USER_IMAGES,
     });
 
-    axios(userImagesConfig(username, pageNumber))
-      .then((res) => {
-        dispatch(setUserImages(res.data));
-      })
-      .catch((err) => {
-        alert(err);
-      });
+    const userImagesData = await fetchUserImages(username, pageNumber);
+
+    dispatch(setUserImages(userImagesData));
   };
 };
 
